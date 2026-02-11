@@ -929,6 +929,7 @@ text tspan {
   transition: all 0.35s ease;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25), 0 3px 8px rgba(0, 0, 0, 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  z-index: 999;
 }
 
 .my-Projects .projects-grid .project-btn:hover {
@@ -937,7 +938,6 @@ text tspan {
 
 .project-btn.button-l {
   left: 100px;
-  transform: tra;
 }
 
 .project-btn.button-r {
