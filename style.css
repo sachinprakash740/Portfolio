@@ -473,6 +473,7 @@ text tspan {
 
 .about-btn {
   padding: 12px 50px;
+  width: 200px;
   background: #ffffff;
   /* background: var(--secondary-color); */
   border: none;
