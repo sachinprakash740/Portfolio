@@ -139,3 +139,14 @@ const arrowBtn = document.querySelector('.move-Top');
 arrowBtn.addEventListener('click', function () {
   document.querySelector('#section-1').scrollIntoView({ behavior: 'smooth' });
 });
+
+//////// for menu -bar//////////////////////
+
+const menuButton = document.querySelector('.menu-bar');
+
+const navbarSlider = document.querySelector('.nav-links');
+
+menuButton.addEventListener('click', function () {
+  console.log(1);
+  navbarSlider.classList.toggle('bar-active');
+});

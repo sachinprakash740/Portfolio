@@ -27,7 +27,7 @@ body {
   align-items: center;
   background: var(--primary-color);
   border-radius: 50px;
-  z-index: 1000;
+  position: relative;
 }
 
 .nav-logo {
@@ -95,6 +95,17 @@ body {
   text-underline-offset: 4px;
   text-decoration-thickness: 1px;
   transform: scale(1.1);
+}
+
+.menu-bar {
+  width: 40px;
+  height: 40px;
+  background: var(--secondary-color);
+  border: none;
+  border-radius: 10px;
+  right: 25px;
+  position: absolute;
+  display: none;
 }
 
 .contact-btn {
@@ -361,7 +372,7 @@ text tspan {
   background: var(--secondary-color);
   position: absolute;
   top: 400px;
-  right: -60px;
+  right: 0px;
 }
 
 .frontend,
@@ -507,7 +518,7 @@ text tspan {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: auto;
   position: relative;
 }
 
@@ -653,17 +664,17 @@ text tspan {
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
-  gap: 22px;
+  gap: 15px;
   align-items: center;
   justify-content: start;
   flex-direction: column;
-  width: 400px;
+  width: 350px;
   text-align: center;
   height: auto;
   background: #fff;
   /* border: 4px solid var(--secondary-color); */
   border-radius: 15px;
-  box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 5px 15px 5px rgba(0, 0, 0, 0.3);
 }
 
 .about-education-box h3 {
@@ -699,7 +710,9 @@ text tspan {
   gap: 5px;
 }
 
-.about-education-box .cap,
+.about-education-box .cap {
+  color: var(--secondary-color);
+}
 .about-education-box h4 {
   color: #3fa7c5;
 }
@@ -797,7 +810,6 @@ text tspan {
   transition: transform 0.35s ease, opacity 0.3s ease;
   /* will-change: transform, opacity; */
   background: #fff;
-
   pointer-events: none;
 }
 
@@ -937,11 +949,11 @@ text tspan {
 }
 
 .project-btn.button-l {
-  left: 100px;
+  left: 5%;
 }
 
 .project-btn.button-r {
-  right: 100px;
+  right: 5%;
 }
 
 /* /////////////////////connect-section//////////////////////////// */
@@ -1130,4 +1142,231 @@ text tspan {
   right: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+}
+
+/* /////////////////////////Media query////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////// */
+
+@media (max-width: 1024px) {
+  .active-padding {
+    padding: 20px 20px;
+  }
+  .menu-bar {
+    display: block;
+    z-index: 99;
+  }
+
+  .nav-links {
+    position: fixed;
+    width: 400px;
+    height: 100vh;
+    background: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    top: 20px;
+    right: -999px;
+    padding: 100px 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: 0.4s ease;
+  }
+  .contact-btn-1 {
+    display: none;
+  }
+  .bar-active {
+    right: 0;
+  }
+
+  /* ////// header details///////////////////////////// */
+
+  .header-details {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .header-details-1 {
+    padding: 0px 40px;
+    margin-bottom: 40px;
+    width: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* ////////////////////////////////////section about me///////////// */
+
+  .about {
+    padding-bottom: 40px;
+    height: 75vh;
+  }
+
+  /* ////////////////////////////project//////////////// */
+
+  .projects {
+    margin-top: 50px;
+  }
+
+  .my-Projects .projects-grid {
+    height: 50vh;
+  }
+
+  .project-btn.button-r {
+    right: 1%;
+  }
+  .project-btn.button-l {
+    left: 1%;
+  }
+
+  .my-Projects .projects-grid .project-card.prev1 {
+    transform: translate(-80%, -50%) scale(0.85);
+  }
+
+  .my-Projects .projects-grid .project-card.prev2 {
+    transform: translate(-105%, -50%) scale(0.7);
+  }
+
+  .my-Projects .projects-grid .project-card.next1 {
+    transform: translate(-20%, -50%) scale(0.85);
+  }
+
+  .my-Projects .projects-grid .project-card.next2 {
+    transform: translate(5%, -50%) scale(0.7);
+  }
+}
+
+/* 
+////////////////////medi a querry for mobile- devices////////////////////
+///////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////// */
+
+@media (max-width: 600px) {
+  .nav-links {
+    width: 300px;
+    z-index: 50;
+    height: 100vh;
+  }
+  .active-padding {
+    padding: 20px 0px;
+  }
+  .header-details-1 h2 {
+    line-height: 1.2;
+  }
+  .header-details-1 p {
+    font-size: 17px;
+  }
+  .header-details-1 .resume {
+    flex-direction: column;
+  }
+
+  .contact-btn {
+    width: 100%;
+  }
+  .header-details-2 {
+    height: 40vh;
+    scale: 0.6;
+    transform: translateY(-80px);
+  }
+  .about {
+    height: 130vh;
+  }
+
+  .about-buttons {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .about-btn-active {
+    transform: translateY(0%);
+    scale: 1.1;
+  }
+
+  .about-summary {
+    text-align: center;
+  }
+  .download-resume {
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .about-education {
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* /////////////////////////project-section///////////////////// */
+
+  .my-Projects {
+    text-align: center;
+  }
+  .my-Projects .projects-grid {
+    height: 60vh;
+  }
+
+  .project-btn.button-r {
+    right: 1%;
+  }
+  .project-btn.button-l {
+    left: 1%;
+  }
+
+  .my-Projects .projects-grid .project-card.prev1 {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+
+  .my-Projects .projects-grid .project-card.prev2 {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+
+  .my-Projects .projects-grid .project-card.next1 {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+
+  .my-Projects .projects-grid .project-card.next2 {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+
+  /* //////////////////connect section///////////////////// */
+
+  .lets-connect {
+    margin-top: 50px;
+  }
+
+  .connect-header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .connect-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .connect-info .connect-info-1 {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+  }
+  .connect-info-1 .nav-logo {
+    margin: 0 0;
+  }
+
+  .connect-info .connect-info-2 {
+    justify-content: center;
+  }
+
+  /* ////// footer///////////////////////////////// */
+
+  .footer {
+    margin-top: 30px;
+    flex-direction: column;
+  }
 }
