@@ -62,31 +62,14 @@ prevBtn.addEventListener('click', () => {
 
 cardsPosition();
 
-///// for each position ////
-
-//  const length = cards.length;
-//   cards.forEach((card, i) => {
-//     let diff = i - index;
-
-//     if (diff > length / 2) diff - +length;
-//     if (diff < -length / 2) diff + -length;
-
-//     if (i === index) {
-//       card.classList.add('active1');
-//       card.style.pointerEvents = 'auto';
-//     }
-//     if (i === index + 1) card.classList.add('next1');
-//     if (i === index + 2) card.classList.add('next2');
-//     if (i === index + length - 1) card.classList.add('prev1');
-//     if (i === index + length - 2) card.classList.add('prev2');
-//   });
-
 //////////////////// for nav bar links- scroll////////////
 
 const navItems = document.querySelectorAll('.nav-items');
 
 navItems.forEach((item) => {
   item.addEventListener('click', function (e) {
+    navItems.forEach((im) => im.classList.remove('active'));
+    item.classList.add('active');
     e.preventDefault();
     const data = item.dataset.set;
     document
@@ -132,14 +115,6 @@ window.addEventListener('load', function () {
   window.scrollTo(0, 0);
 });
 
-///////////////////////////// end arrow btn//////////////////
-
-const arrowBtn = document.querySelector('.move-Top');
-
-arrowBtn.addEventListener('click', function () {
-  document.querySelector('#section-1').scrollIntoView({ behavior: 'smooth' });
-});
-
 //////// for menu -bar//////////////////////
 
 const menuButton = document.querySelector('.menu-bar');
@@ -149,4 +124,40 @@ const navbarSlider = document.querySelector('.nav-links');
 menuButton.addEventListener('click', function () {
   console.log(1);
   navbarSlider.classList.toggle('bar-active');
+});
+
+////////////////////////////for nav-bar sticky///////////////////////
+
+const navBar = document.querySelector('.header-navbar');
+const sentinel = document.querySelector('.nav-sentinel');
+
+const desktopQuery = window.matchMedia('(min-width: 1024px)');
+
+function initObserver() {
+  if (!desktopQuery.matches) return;
+
+  const navBarObserver = new IntersectionObserver(
+    function (entries) {
+      const [entry] = entries;
+      if (!entry.isIntersecting) {
+        navBar.classList.add('navBar-active');
+      } else navBar.classList.remove('navBar-active');
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: '14px',
+    }
+  );
+  navBarObserver.observe(sentinel);
+}
+
+initObserver();
+
+///////////////////////////// end arrow btn//////////////////
+
+const arrowBtn = document.querySelector('.move-Top');
+
+arrowBtn.addEventListener('click', function () {
+  sentinel.scrollIntoView({ behavior: 'smooth' });
 });

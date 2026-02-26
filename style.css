@@ -8,29 +8,40 @@
   padding: 0;
   box-sizing: border-box;
 }
-html,
+/* html,
 body {
   overflow-x: hidden;
-}
+} */
 body {
   font-family: 'Poppins', sans-serif;
   position: relative;
 }
-/* .home {
-  position: relative;
-} */
+
+.nav-sentinel {
+  height: 1px;
+}
+
 .active-padding {
   padding: 20px 80px;
 }
 
 .header-navbar {
+  margin: 20px 80px;
   display: flex;
   justify-content: space-between;
   padding: 0px 10px;
   align-items: center;
   background: var(--primary-color);
   border-radius: 50px;
-  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navBar-active {
+  position: sticky;
+  top: -5px;
+  z-index: 1000;
+  scale: 0.7;
+  border: 2px solid var(--secondary-color);
 }
 
 .nav-logo {
@@ -428,8 +439,9 @@ text tspan {
 .web .char {
   display: inline-block;
   transform: rotate(-90deg);
-  color: var(--secondary-color);
+  color: white;
   font-weight: 600;
+  font-size: 18px;
 }
 
 /* ///////////////////////////////////section-about//////////////// */
@@ -1163,7 +1175,9 @@ text tspan {
     z-index: 99;
   }
   .header-navbar {
-    width: 100%;
+    position: relative;
+    margin: 20px 20px;
+    margin-bottom: 0;
   }
   .nav-links {
     display: flex;
@@ -1174,7 +1188,7 @@ text tspan {
     z-index: 99;
     flex-direction: column;
     top: 20px;
-    transform: translateX(100%);
+    transform: translateX(500%);
     right: 0px;
     padding: 100px 20px;
     align-items: flex-start;
@@ -1209,6 +1223,10 @@ text tspan {
   .about {
     padding-bottom: 40px;
     height: 75vh;
+  }
+
+  .about-btn {
+    width: 180px;
   }
 
   /* ////////////////////////////project//////////////// */
@@ -1251,13 +1269,21 @@ text tspan {
 /////////////////////////////////////////////////////////////////////////// */
 
 @media (max-width: 600px) {
+  .header-navbar {
+    position: relative;
+    margin: 10px 10px;
+  }
   .nav-links {
+    top: 10px;
     width: 300px;
     z-index: 50;
     height: 100vh;
   }
+  .header-details {
+    margin-top: 0px;
+  }
   .active-padding {
-    padding: 20px 0px;
+    padding: 10px 0px;
   }
   .header-details-1 h2 {
     line-height: 1.2;
@@ -1278,7 +1304,7 @@ text tspan {
     transform: translateY(-80px);
   }
   .about {
-    height: 130vh;
+    height: 120vh;
   }
 
   .about-buttons {
