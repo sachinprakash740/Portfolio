@@ -98,11 +98,17 @@ const sectionObserver = new IntersectionObserver(
     const [entry] = entries;
     if (entry.isIntersecting) {
       entry.target.classList.add('section-active');
-      unobserver.unobserve(entry.target);
+      // for- adding active class on list as scroll///
+      navItems.forEach((im) => im.classList.remove('active'));
+      const getData = entry.target.dataset.set;
+
+      document
+        .querySelector(`.nav-items[data-set="${getData}"]`)
+        .classList.add('active');
     }
   },
   {
-    threshold: 0.3,
+    threshold: 0.15,
   }
 );
 
@@ -113,6 +119,14 @@ sections.forEach((sec) => {
 window.history.scrollRestoration = 'manual';
 window.addEventListener('load', function () {
   window.scrollTo(0, 0);
+});
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY === 0) {
+    navItems.forEach((im) => im.classList.remove('active'));
+
+    document.querySelector('.nav-items[data-set="1"]').classList.add('active');
+  }
 });
 
 //////// for menu -bar//////////////////////
