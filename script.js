@@ -1,4 +1,4 @@
-' use strict';
+'use strict';
 
 const aboutBtns = document.querySelectorAll('.about-btn');
 const aboutInfo = document.querySelectorAll('.about-info-common');
@@ -109,7 +109,7 @@ const sectionObserver = new IntersectionObserver(
   },
   {
     threshold: 0.15,
-  }
+  },
 );
 
 sections.forEach((sec) => {
@@ -136,7 +136,6 @@ const menuButton = document.querySelector('.menu-bar');
 const navbarSlider = document.querySelector('.nav-links');
 
 menuButton.addEventListener('click', function () {
-  console.log(1);
   navbarSlider.classList.toggle('bar-active');
 });
 
@@ -161,7 +160,7 @@ function initObserver() {
       root: null,
       threshold: 0,
       rootMargin: '14px',
-    }
+    },
   );
   navBarObserver.observe(sentinel);
 }
