@@ -1252,6 +1252,12 @@ text tspan {
     align-items: flex-start;
     justify-content: flex-start;
     transition: transform 0.35s ease;
+    border: 2px solid var(--secondary-color);
+    border-right: none;
+    border-top-left-radius: 25px;
+    box-shadow:
+      -4px 0 10px rgba(0, 0, 0, 0.1),
+      -10px 0 25px rgba(0, 0, 0, 0.15);
   }
   .contact-btn-1 {
     display: none;
