@@ -8,10 +8,10 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* html,
+html,
 body {
   overflow-x: hidden;
-} */
+}
 body {
   font-family: 'Poppins', sans-serif;
   position: relative;
@@ -556,7 +556,9 @@ text tspan {
   border-radius: 14px;
   background: #f3f6fb;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .about-skils-box h3 {
@@ -865,13 +867,17 @@ text tspan {
   width: 380px;
   border-radius: 20px;
   gap: 15px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12),
+    0 4px 10px rgba(0, 0, 0, 0.08);
   position: absolute;
   top: 50%;
   left: 50%;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.9);
-  transition: transform 0.35s ease, opacity 0.3s ease;
+  transition:
+    transform 0.35s ease,
+    opacity 0.3s ease;
   /* will-change: transform, opacity; */
   background: #fff;
   pointer-events: none;
@@ -917,7 +923,8 @@ text tspan {
 .project-card .project-card-img {
   overflow: hidden;
   border-radius: 16px;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
     0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
@@ -1003,7 +1010,9 @@ text tspan {
   transform: translateY(-50%);
   cursor: pointer;
   transition: all 0.35s ease;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25), 0 3px 8px rgba(0, 0, 0, 0.18),
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.25),
+    0 3px 8px rgba(0, 0, 0, 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.25);
   z-index: 999;
 }
@@ -1095,7 +1104,9 @@ text tspan {
   border-radius: 50%;
   font-weight: 600;
   transition: all 0.35s ease;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25), 0 3px 8px rgba(0, 0, 0, 0.18),
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.25),
+    0 3px 8px rgba(0, 0, 0, 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.25);
   /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); */
 }
