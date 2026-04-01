@@ -1245,7 +1245,7 @@ text tspan {
     background: var(--primary-color);
     z-index: 99;
     flex-direction: column;
-    top: 20px;
+    top: 21px;
     transform: translateX(500%);
     right: 0px;
     padding: 100px 20px;

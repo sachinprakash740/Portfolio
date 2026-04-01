@@ -62,6 +62,36 @@ prevBtn.addEventListener('click', () => {
 
 cardsPosition();
 
+//////// for menu -bar//////////////////////
+
+const menuButton = document.querySelector('.menu-bar');
+
+const navbarSlider = document.querySelector('.nav-links');
+
+menuButton.addEventListener('click', function () {
+  navbarSlider.classList.toggle('bar-active');
+});
+
+///// nav - bar -slier//////////////////////////
+
+document.addEventListener('click', function (e) {
+  if (!navbarSlider.contains(e.target) && !menuButton.contains(e.target)) {
+    navbarSlider.classList.remove('bar-active');
+  }
+});
+
+// let startScrollY = 0;
+
+window.addEventListener('scroll', function () {
+  // const scrollDifference = Math.abs(window.scrollY - startScrollY);
+
+  // if (scrollDifference > 50) {
+  //   // threshold
+  //   navbarSlider.classList.remove('bar-active');
+  // }
+  navbarSlider.classList.remove('bar-active');
+});
+
 //////////////////// for nav bar links- scroll////////////
 
 const navItems = document.querySelectorAll('.nav-items');
@@ -75,6 +105,7 @@ navItems.forEach((item) => {
     document
       .querySelector(`#section-${data}`)
       .scrollIntoView({ behavior: 'smooth' });
+    navbarSlider.classList.remove('bar-active');
   });
 });
 
@@ -127,16 +158,6 @@ window.addEventListener('scroll', () => {
 
     document.querySelector('.nav-items[data-set="1"]').classList.add('active');
   }
-});
-
-//////// for menu -bar//////////////////////
-
-const menuButton = document.querySelector('.menu-bar');
-
-const navbarSlider = document.querySelector('.nav-links');
-
-menuButton.addEventListener('click', function () {
-  navbarSlider.classList.toggle('bar-active');
 });
 
 ////////////////////////////for nav-bar sticky///////////////////////
