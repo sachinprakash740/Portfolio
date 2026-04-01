@@ -1255,9 +1255,7 @@ text tspan {
     border: 2px solid var(--secondary-color);
     border-right: none;
     border-top-left-radius: 25px;
-    box-shadow:
-      -4px 0 10px rgba(0, 0, 0, 0.1),
-      -10px 0 25px rgba(0, 0, 0, 0.15);
+    box-shadow: -15px 0 40px rgba(0, 0, 0, 0.25);
   }
   .contact-btn-1 {
     display: none;
